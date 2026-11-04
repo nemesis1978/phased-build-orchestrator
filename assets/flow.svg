@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Phased build pipeline with a quality gate and four outcome states">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+    </marker>
+    <marker id="arrowNo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F87171"/>
+    </marker>
+    <marker id="arrowYes" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34D399"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="560" fill="#0B1220"/>
+
+  <text x="64" y="52" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-size="26" font-weight="700" fill="#F8FAFC">One phase at a time, with a gate in between</text>
+  <text x="64" y="78" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif"
+        font-size="14" fill="#94A3B8">No phase advances because the agent says it is done. It advances because the gate passed.</text>
+
+  <!-- Pipeline -->
+  <g font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif">
+    <rect x="64" y="104" width="360" height="52" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="126" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#64748B">INPUT</text>
+    <text x="84" y="144" font-size="16" fill="#E2E8F0">Idea, informal request</text>
+
+    <rect x="64" y="176" width="360" height="52" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="198" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#38BDF8">PHASE A</text>
+    <text x="84" y="216" font-size="16" fill="#E2E8F0">Discovery → project-brief.md</text>
+
+    <rect x="64" y="248" width="360" height="52" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="270" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#38BDF8">PHASE C</text>
+    <text x="84" y="288" font-size="16" fill="#E2E8F0">Specification → SPEC.md</text>
+
+    <rect x="64" y="320" width="360" height="52" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="342" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#38BDF8">PHASE D</text>
+    <text x="84" y="360" font-size="16" fill="#E2E8F0">Plan → BUILD_PHASES.md</text>
+
+    <rect x="64" y="392" width="360" height="52" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="414" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#38BDF8">PHASE E</text>
+    <text x="84" y="432" font-size="16" fill="#E2E8F0">One phase, tests, evidence</text>
+
+    <rect x="64" y="470" width="360" height="46" rx="8" fill="#16233D" stroke="#2A3B5E"/>
+    <text x="84" y="490" font-size="12" font-family="ui-monospace, Consolas, monospace" fill="#38BDF8">PHASE F / G</text>
+    <text x="84" y="507" font-size="15" fill="#E2E8F0">Handoff, regression, closure</text>
+  </g>
+
+  <!-- vertical arrows -->
+  <g stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="244" y1="156" x2="244" y2="172"/>
+    <line x1="244" y1="228" x2="244" y2="244"/>
+    <line x1="244" y1="300" x2="244" y2="316"/>
+    <line x1="244" y1="372" x2="244" y2="388"/>
+    <line x1="244" y1="444" x2="244" y2="466"/>
+  </g>
+
+  <!-- Gate diamond -->
+  <g>
+    <path d="M 640 300 L 730 240 L 820 300 L 730 360 Z" fill="#1B2A44" stroke="#F59E0B" stroke-width="2"/>
+    <text x="730" y="296" text-anchor="middle" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif"
+          font-size="17" font-weight="700" fill="#F59E0B">GATE</text>
+    <text x="730" y="316" text-anchor="middle" font-family="ui-monospace, Consolas, monospace"
+          font-size="11" fill="#94A3B8">all criteria?</text>
+  </g>
+
+  <line x1="424" y1="418" x2="600" y2="418" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="600" y1="418" x2="600" y2="330" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="600" y1="330" x2="628" y2="318" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- NO branch back to previous phase -->
+  <path d="M 730 360 L 730 470 L 470 470" fill="none" stroke="#F87171" stroke-width="1.5" marker-end="url(#arrowNo)"/>
+  <text x="742" y="440" font-family="ui-monospace, Consolas, monospace" font-size="12" fill="#F87171">NO → fix, retest</text>
+
+  <!-- YES branch -->
+  <path d="M 820 300 L 900 300" fill="none" stroke="#34D399" stroke-width="1.5" marker-end="url(#arrowYes)"/>
+  <text x="826" y="288" font-family="ui-monospace, Consolas, monospace" font-size="12" fill="#34D399">YES</text>
+
+  <!-- Outcomes card -->
+  <g>
+    <rect x="912" y="176" width="224" height="248" rx="12" fill="#111C33" stroke="#26375C"/>
+    <text x="932" y="204" font-family="ui-monospace, Consolas, monospace"
+          font-size="12" fill="#94A3B8">FOUR STATES ONLY</text>
+
+    <circle cx="940" cy="230" r="5" fill="#34D399"/>
+    <text x="956" y="235" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#E2E8F0">PASS</text>
+    <text x="956" y="251" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748B">criteria + tests ok</text>
+
+    <circle cx="940" cy="278" r="5" fill="#F87171"/>
+    <text x="956" y="283" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#E2E8F0">FAILED</text>
+    <text x="956" y="299" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748B">tests ran, they failed</text>
+
+    <circle cx="940" cy="326" r="5" fill="#FBBF24"/>
+    <text x="956" y="331" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#E2E8F0">BLOCKED</text>
+    <text x="956" y="347" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748B">needs a decision</text>
+
+    <circle cx="940" cy="374" r="5" fill="#64748B"/>
+    <text x="956" y="379" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#E2E8F0">NOT RUN</text>
+    <text x="956" y="395" font-family="ui-sans-serif, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748B">never reported as PASS</text>
+  </g>
+
+  <text x="64" y="545" font-family="ui-monospace, Consolas, monospace" font-size="11" fill="#475569">
+    discovery · specification · phasing · gated execution · handoff
+  </text>
+</svg>

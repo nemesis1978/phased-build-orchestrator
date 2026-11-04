@@ -1,0 +1,36 @@
+# Fase D — Pianificazione delle Build Phases
+
+Crea `docs/BUILD_PHASES.md`. Suddividi per **incrementi verticali verificabili**: ogni fase deve avere un risultato concreto, non una raccolta vaga di attività («fare backend», «fare frontend»).
+
+Ordina per **dipendenze e rischio**; prepara prima gli elementi che permettono test reali.
+
+## Schema obbligatorio
+
+```md
+## BP-001 — [titolo e risultato osservabile]
+- Stato: TODO | IN_PROGRESS | BLOCKED | FAILED | PASS
+- Obiettivo: ...
+- Valore per l'utente / risultato dimostrabile: ...
+- Dipendenze: ...
+- Scope incluso: ...
+- Fuori scope: ...
+- File/servizi presumibilmente coinvolti: ...
+- Decisioni da chiarire prima del codice: ...
+- Implementazione prevista: ...
+- Test obbligatori: ...
+- Criteri di accettazione: ...
+- Rischi e piano di rollback: ...
+- Evidenze al completamento: [comandi, risultati, commit, screenshot o log se utili]
+```
+
+## Regole di scomposizione
+
+- Il numero di fasi **non è fisso**: può essere 3, 10 o 50. Minimizza la dimensione mantenendo ogni fase utile e verificabile.
+- Una fase senza test obbligatori non è una fase: è una nota.
+- Se una fase richiede più di un giorno di lavoro, è probabilmente due fasi.
+- Le fasi si possono **ripianificare** se emergono nuove informazioni: registra il motivo e l'effetto sulle altre fasi.
+- Una fase non deve dipendere da lavoro non ancora pianificato.
+
+## Approvazione
+
+Il piano si presenta e si approva **prima** di scrivere codice. Un piano non approvato non si esegue «intanto che aspetto».

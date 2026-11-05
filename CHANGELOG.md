@@ -8,6 +8,12 @@ The version in `SKILL.md` is the authoritative one.
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-11-05
+
+### Fixed
+
+- `SKILL.md`: the `description` was unquoted and contained `": "`, which makes the YAML frontmatter unparseable by a strict parser — the skill would not load on hosts that validate the frontmatter. Quoted it. Found by `skill-doctor` against five real hosts.
+
 ## [1.0.1] - 2026-11-05
 
 ### Added
@@ -29,6 +35,7 @@ The version in `SKILL.md` is the authoritative one.
 - `scripts/validate-skill.sh`: executable format contract — name/directory match, referenced and orphaned files, absolute paths, all four gate states documented, `SKILL.md` length, obvious secrets, changelog section.
 - Compatibility note explaining how the skill delegates to `handoff`, `wayfinder`, `plan`, and `groundwork` instead of duplicating them.
 
-[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/nemesis1978/phased-build-orchestrator/releases/tag/v1.0.0

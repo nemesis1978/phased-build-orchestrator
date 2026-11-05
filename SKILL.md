@@ -1,9 +1,9 @@
 ---
 name: phased-build-orchestrator
-version: 1.0.1
+version: 1.0.2
 author: Egix
 license: MIT
-description: Usa quando si sviluppa un progetto a fasi: discovery, specifica, Build Phases, gate di test, handoff tra sessioni.
+description: "Usa quando si sviluppa un progetto a fasi: discovery, specifica, Build Phases, gate di test, handoff tra sessioni."
 metadata:
   category: software-development
   language: it

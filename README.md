@@ -144,7 +144,7 @@ Do not modify any other skill or config.
 ## What's inside
 
 ```
-SKILL.md              principles, flow, phases, gate rules, checkpoint format (130 lines)
+SKILL.md              principles, phase 0, flow, phases, gate rules, checkpoint format (157 lines)
 references/           eight files, loaded only when the phase needs them
 scripts/              validate-skill.sh — the executable format contract
 assets/               the diagram above

@@ -5,7 +5,7 @@
 [![Hosts](https://img.shields.io/badge/hosts-5-34D399.svg)](#compatibility)
 [![Version](https://img.shields.io/badge/version-1.0.3-F59E0B.svg)](CHANGELOG.md)
 
-![A phased build pipeline with a quality gate and four outcome states](assets/flow.svg)
+![Phase 0 reads the project state, then the pipeline runs one phase at a time behind a quality gate, with four outcome states](assets/flow.svg)
 
 > **An agent skill that turns "build me this" into a sequence of verified phases** — discovery, specification, build phases, a gate between each one, and a handoff that survives a new session.
 

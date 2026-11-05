@@ -8,6 +8,14 @@ The version in `SKILL.md` is the authoritative one.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-05
+
+### Added
+
+- `references/execution.md`: any addition beyond the planned scope must be recorded in the checkpoint with its reason; if it changes the value or the criteria of the phase, stop and ask.
+- Gate `PASS` gains a fifth condition: no undeclared scope.
+- `SKILL.md`: the checkpoint format gains a `### Scope` block, so scope drift becomes visible instead of implicit.
+
 ## [1.0.0] - 2026-11-04
 
 ### Added
@@ -21,5 +29,6 @@ The version in `SKILL.md` is the authoritative one.
 - `scripts/validate-skill.sh`: executable format contract — name/directory match, referenced and orphaned files, absolute paths, all four gate states documented, `SKILL.md` length, obvious secrets, changelog section.
 - Compatibility note explaining how the skill delegates to `handoff`, `wayfinder`, `plan`, and `groundwork` instead of duplicating them.
 
-[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/nemesis1978/phased-build-orchestrator/releases/tag/v1.0.0

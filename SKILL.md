@@ -1,6 +1,6 @@
 ---
 name: phased-build-orchestrator
-version: 1.0.0
+version: 1.0.1
 author: Egix
 license: MIT
 description: Usa quando si sviluppa un progetto a fasi: discovery, specifica, Build Phases, gate di test, handoff tra sessioni.
@@ -94,6 +94,9 @@ Progetto: … | Build Phase: BP-00X | Esito: PASS/FAILED/BLOCKED/IN_PROGRESS
 
 ### Verifiche
 [test eseguiti con comando → risultato reale; test mancanti e perché]
+
+### Scope
+[rispetto al piano: nessuna aggiunta | aggiunte: elenco, con il motivo e con la conferma che nulla è stato rimosso]
 
 ### Decisioni e rischi
 [solo quelli rilevanti]

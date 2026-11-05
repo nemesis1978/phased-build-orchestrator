@@ -1,6 +1,6 @@
 ---
 name: phased-build-orchestrator
-version: 1.0.2
+version: 1.0.3
 author: Egix
 license: MIT
 description: "Usa quando si sviluppa un progetto a fasi: discovery, specifica, Build Phases, gate di test, handoff tra sessioni."
@@ -45,6 +45,8 @@ Se esistono già una specifica e uno stato di progetto affidabili, non ricominci
 ```text
 IDEA / RICHIESTA
    ↓
+STATO (fase 0: leggi la cartella, dichiara le evidenze)
+   ↓
 DISCOVERY  →  [WAYFINDING solo se il progetto è vasto e le decisioni sono aperte]
    ↓
 SPEC / PRD (requisiti + non-obiettivi + criteri di accettazione)
@@ -64,6 +66,28 @@ REGRESSION TEST + DOCUMENTAZIONE + CONSEGNA
 ```
 
 `Handoff` documenta e trasferisce stato, **non** sostituisce i test. `Compact` riduce il contesto della sessione e **non** sostituisce i file persistenti.
+
+## Fase 0 — Stato del progetto (sempre, prima di tutto)
+
+Prima di qualsiasi fase, guarda. Non chiedere ciò che la cartella può dimostrare.
+
+```bash
+ls -a                                                     # codice, documenti, configurazione
+git status --short                                        # tracciato, non committato, o nessun repository
+ls PRODUCT.md docs/SPEC.md docs/BUILD_PHASES.md docs/HANDOFF.md 2>/dev/null
+```
+
+Dichiara uno stato con le sue evidenze: `Stato: <stato> — evidenze: <file e comandi>`.
+
+| Stato | Come si riconosce | Dove si riprende |
+|---|---|---|
+| vuoto | nessun codice, nessun documento | Fase A |
+| idea | `PRODUCT.md` o appunti, nessun codice | A, poi C |
+| scaffold | compila, ma nessuna `SPEC.md` / `BUILD_PHASES.md` | C |
+| in corso | SPEC e BUILD_PHASES presenti, fasi non tutte `PASS` | E, dal primo punto irrisolto di `HANDOFF.md` |
+| rotto | non compila, dipendenze mancanti, git assente | `groundwork` percorso C, poi si riprende |
+
+Se esiste `docs/HANDOFF.md`, leggilo **prima** di qualsiasi altra cosa: è la fonte per riprendere. Chiedi conferma all'utente solo quando le evidenze si contraddicono — non quando un comando può rispondere da solo.
 
 ## Le fasi
 

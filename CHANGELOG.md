@@ -8,6 +8,15 @@ The version in `SKILL.md` is the authoritative one.
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-11-05
+
+### Added
+
+- **Fase 0 — Stato del progetto**: prima di qualsiasi fase, tre comandi e uno stato dichiarato con le sue evidenze (vuoto / idea / scaffold / in corso / rotto). Se esiste `docs/HANDOFF.md`, si legge prima di ogni altra cosa.
+- Regola esplicita: chiedere conferma solo quando le evidenze si contraddicono, mai quando un comando può rispondere.
+- Il diagramma del flusso ora parte da STATO, non da DISCOVERY.
+- Validatore: controlla la presenza della Fase 0.
+
 ## [1.0.2] - 2026-11-05
 
 ### Fixed
@@ -35,7 +44,8 @@ The version in `SKILL.md` is the authoritative one.
 - `scripts/validate-skill.sh`: executable format contract — name/directory match, referenced and orphaned files, absolute paths, all four gate states documented, `SKILL.md` length, obvious secrets, changelog section.
 - Compatibility note explaining how the skill delegates to `handoff`, `wayfinder`, `plan`, and `groundwork` instead of duplicating them.
 
-[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/nemesis1978/phased-build-orchestrator/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/nemesis1978/phased-build-orchestrator/releases/tag/v1.0.0

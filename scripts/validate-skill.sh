@@ -74,5 +74,12 @@ else
   fail "CHANGELOG.md missing or without [Unreleased] section"
 fi
 
+# Fase 0
+if grep -q '^## Fase 0' "$DIR/SKILL.md"; then
+  ok "fase 0 (stato del progetto) presente"
+else
+  fail "fase 0 (stato del progetto) mancante"
+fi
+
 echo
 if [ "$FAIL" -eq 0 ]; then echo "PASS"; exit 0; else echo "FAILED ($FAIL)"; exit 1; fi

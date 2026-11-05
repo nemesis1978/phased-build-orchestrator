@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Format](https://img.shields.io/badge/format-SKILL.md-6E7681.svg)](SKILL.md)
 [![Hosts](https://img.shields.io/badge/hosts-5-34D399.svg)](#compatibility)
-[![Version](https://img.shields.io/badge/version-1.0.0-F59E0B.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.3-F59E0B.svg)](CHANGELOG.md)
 
 ![A phased build pipeline with a quality gate and four outcome states](assets/flow.svg)
 
@@ -42,6 +42,22 @@ Four states, and only four. This is the core of the skill: a test that could not
 | **`NOT RUN`** | the check could not be executed — a limit to declare, not a success to claim |
 
 An agent that only knows `done` and `not done` will lie to you eventually. Not out of malice: because `not done` has no room for "I couldn't check".
+
+---
+
+## Phase 0 — read the state before anything
+
+Three commands (`ls -a`, `git status --short`, presence of `PRODUCT.md` / `docs/SPEC.md` / `docs/BUILD_PHASES.md` / `docs/HANDOFF.md`), then one declared state with its evidence:
+
+| State | Where it resumes |
+|---|---|
+| *empty* | phase A |
+| *idea* — a `PRODUCT.md`, no code | A, then C |
+| *scaffold* — builds, no SPEC | C |
+| *in progress* — SPEC and phases exist, not all `PASS` | E, from the first open item in `HANDOFF.md` |
+| *broken* — does not build, no git | `groundwork` path C first |
+
+If `docs/HANDOFF.md` exists it is read **before** anything else. The skill asks the user only when the evidence contradicts itself — never when a command can answer.
 
 ---
 
